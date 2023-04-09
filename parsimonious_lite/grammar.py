@@ -10,12 +10,12 @@ from inspect import isfunction, ismethod
 
 from six import (text_type, itervalues, iteritems, python_2_unicode_compatible, PY2)
 
-from parsimonious.exceptions import BadGrammar, UndefinedLabel
-from parsimonious.expressions import (Literal, Regex, Sequence, OneOf,
+from parsimonious_lite.exceptions import BadGrammar, UndefinedLabel
+from parsimonious_lite.expressions import (Literal, Regex, Sequence, OneOf,
     Lookahead, Optional, ZeroOrMore, OneOrMore, Not, TokenMatcher,
     expression)
-from parsimonious.nodes import NodeVisitor
-from parsimonious.utils import evaluate_string
+from parsimonious_lite.nodes import NodeVisitor
+from parsimonious_lite.utils import evaluate_string
 
 @python_2_unicode_compatible
 class Grammar(OrderedDict):

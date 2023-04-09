@@ -2,9 +2,9 @@
 from nose import SkipTest
 from nose.tools import eq_, ok_, assert_raises, assert_in
 
-from parsimonious import Grammar, NodeVisitor, VisitationError, rule
-from parsimonious.expressions import Literal
-from parsimonious.nodes import Node
+from parsimonious_lite import Grammar, NodeVisitor, VisitationError, rule
+from parsimonious_lite.expressions import Literal
+from parsimonious_lite.nodes import Node
 
 
 class HtmlFormatter(NodeVisitor):

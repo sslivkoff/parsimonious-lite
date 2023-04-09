@@ -33,7 +33,7 @@ Here's how to build a simple grammar:
 
 .. code:: python
 
-    >>> from parsimonious.grammar import Grammar
+    >>> from parsimonious_lite.grammar import Grammar
     >>> grammar = Grammar(
     ...     """
     ...     bold_text  = bold_open text bold_close

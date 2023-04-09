@@ -6,15 +6,15 @@ These do the parsing.
 # TODO: Make sure all symbol refs are local--not class lookups or
 # anything--for speed. And kill all the dots.
 
-from inspect import getargspec
+from inspect import getfullargspec
 import re
 
 from six import integer_types, python_2_unicode_compatible
 from six.moves import range
 
-from parsimonious.exceptions import ParseError, IncompleteParseError
-from parsimonious.nodes import Node, RegexNode
-from parsimonious.utils import StrAndRepr
+from parsimonious_lite.exceptions import ParseError, IncompleteParseError
+from parsimonious_lite.nodes import Node, RegexNode
+from parsimonious_lite.utils import StrAndRepr
 
 MARKER = object()
 
@@ -48,16 +48,16 @@ def expression(callable, rule_name, grammar):
             # Return values as above.
 
     The return value of the callable, if an int or a tuple, will be
-    automatically transmuted into a :class:`~parsimonious.Node`. If it returns
+    automatically transmuted into a :class:`~parsimonious_lite.Node`. If it returns
     a Node-like class directly, it will be passed through unchanged.
 
     :arg rule_name: The rule name to attach to the resulting
-        :class:`~parsimonious.Expression`
-    :arg grammar: The :class:`~parsimonious.Grammar` this expression will be a
+        :class:`~parsimonious_lite.Expression`
+    :arg grammar: The :class:`~parsimonious_lite.Grammar` this expression will be a
         part of, to make delegating to other rules possible
 
     """
-    num_args = len(getargspec(callable).args)
+    num_args = len(getfullargspec(callable).args)
     if num_args == 2:
         is_simple = True
     elif num_args == 5:

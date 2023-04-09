@@ -12,7 +12,7 @@ from sys import version_info, exc_info
 from six import reraise, python_2_unicode_compatible, with_metaclass, \
     iteritems
 
-from parsimonious.exceptions import VisitationError, UndefinedLabel
+from parsimonious_lite.exceptions import VisitationError, UndefinedLabel
 
 
 @python_2_unicode_compatible
@@ -142,7 +142,7 @@ class RuleDecoratorMeta(type):
         methods = [v for k, v in iteritems(namespace) if
                    hasattr(v, '_rule') and isfunction(v)]
         if methods:
-            from parsimonious.grammar import Grammar  # circular import dodge
+            from parsimonious_lite.grammar import Grammar  # circular import dodge
 
             methods.sort(key=(lambda x: x.func_code.co_firstlineno)
                              if version_info[0] < 3 else
@@ -199,7 +199,7 @@ class NodeVisitor(with_metaclass(RuleDecoratorMeta, object)):
         """Walk a parse tree, transforming it into another representation.
 
         Recursively descend a parse tree, dispatching to the method named after
-        the rule in the :class:`~parsimonious.grammar.Grammar` that produced
+        the rule in the :class:`~parsimonious_lite.grammar.Grammar` that produced
         each node. If, for example, a rule was... ::
 
             bold = '<b>'
@@ -307,7 +307,7 @@ def rule(rule_string):
     and the grammar definition.
 
     On an implementation level, all ``@rule`` rules get stitched together into
-    a :class:`~parsimonious.Grammar` that becomes the NodeVisitor's
+    a :class:`~parsimonious_lite.Grammar` that becomes the NodeVisitor's
     :term:`default grammar`.
 
     Typically, the choice of a default rule for this grammar is simple: whatever

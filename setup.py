@@ -13,17 +13,12 @@ from setuptools import setup, find_packages
 long_description=open('README.rst', 'r', encoding='utf8').read()
 
 setup(
-    name='parsimonious',
+    name='parsimonious-lite',
     version='0.8.0',
-    description='(Soon to be) the fastest pure-Python PEG parser I could muster',
-    long_description=long_description,
-    author='Erik Rose',
-    author_email='erikrose@grinchcentral.com',
-    license='MIT',
+    description='lite fork of parsimonious 0.8.0 for compatibility with python 3.11',
     packages=find_packages(exclude=['ez_setup']),
     tests_require=['nose'],
     test_suite='nose.collector',
-    url='https://github.com/erikrose/parsimonious',
     include_package_data=True,
     install_requires=['six>=1.9.0'],
     classifiers=[

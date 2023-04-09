@@ -1,6 +1,6 @@
 from six import text_type, python_2_unicode_compatible
 
-from parsimonious.utils import StrAndRepr
+from parsimonious_lite.utils import StrAndRepr
 
 
 @python_2_unicode_compatible

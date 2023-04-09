@@ -16,7 +16,7 @@ implementation alternatives remain valid.
 import gc
 from timeit import repeat
 
-from parsimonious.grammar import Grammar
+from parsimonious_lite.grammar import Grammar
 
 
 def test_not_really_json_parsing():

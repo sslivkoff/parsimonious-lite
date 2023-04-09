@@ -8,11 +8,11 @@ from nose import SkipTest
 from nose.tools import eq_, assert_raises, ok_
 from six import text_type
 
-from parsimonious.exceptions import UndefinedLabel, ParseError
-from parsimonious.expressions import Literal, Lookahead, Regex, Sequence, TokenMatcher
-from parsimonious.grammar import rule_grammar, RuleVisitor, Grammar, TokenGrammar, LazyReference
-from parsimonious.nodes import Node
-from parsimonious.utils import Token
+from parsimonious_lite.exceptions import UndefinedLabel, ParseError
+from parsimonious_lite.expressions import Literal, Lookahead, Regex, Sequence, TokenMatcher
+from parsimonious_lite.grammar import rule_grammar, RuleVisitor, Grammar, TokenGrammar, LazyReference
+from parsimonious_lite.nodes import Node
+from parsimonious_lite.utils import Token
 
 
 class BootstrappingGrammarTests(TestCase):
