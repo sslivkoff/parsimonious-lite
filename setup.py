@@ -14,7 +14,7 @@ long_description=open('README.rst', 'r', encoding='utf8').read()
 
 setup(
     name='parsimonious-lite',
-    version='0.8.0',
+    version='0.11.0',
     description='lite fork of parsimonious 0.8.0 for compatibility with python 3.11',
     packages=find_packages(exclude=['ez_setup']),
     tests_require=['nose'],
